@@ -1,2 +1,5 @@
 var
 vendor
+.web-server-pid
+node_modules
+public/build
