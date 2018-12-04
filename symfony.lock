@@ -35,6 +35,9 @@
             "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
         }
     },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
+    },
     "doctrine/inflector": {
         "version": "v1.2.0"
     },
@@ -49,6 +52,12 @@
     },
     "doctrine/orm": {
         "version": "v2.5.12"
+    },
+    "doctrine/persistence": {
+        "version": "v1.1.0"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
     },
     "easycorp/easy-log-handler": {
         "version": "1.0",
@@ -118,6 +127,9 @@
             "version": "3.3",
             "ref": "5ec5bb098bc693cd92f03390dd488ea0847cfcc7"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.0.1"
     },
     "symfony/css-selector": {
         "version": "v4.0.0-beta2"
@@ -212,14 +224,8 @@
     "symfony/orm-pack": {
         "version": "v1.0.3"
     },
-    "symfony/phpunit-bridge": {
-        "version": "3.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "3.3",
-            "ref": "0a66a0097def4db1cd03bcb3d4a268440ae4cb47"
-        }
+    "symfony/polyfill-ctype": {
+        "version": "v1.10.0"
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.6.0"
@@ -248,9 +254,6 @@
             "ref": "5b2f0ee78c90d671860ac6450e37dec10fbc0719"
         }
     },
-    "symfony/security": {
-        "version": "v4.0.0-beta2"
-    },
     "symfony/security-bundle": {
         "version": "3.3",
         "recipe": {
@@ -259,6 +262,18 @@
             "version": "3.3",
             "ref": "85834af1496735f28d831489d12ab1921a875e0d"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.2.0"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.0"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.0"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.0"
     },
     "symfony/stopwatch": {
         "version": "v4.0.0-beta2"
@@ -278,7 +293,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.3",
-            "ref": "58f37511a2ceec2761716413ce679cbe118e37c3"
+            "ref": "1fb02a6e1c8f3d4232cce485c9afa868d63b115a"
         }
     },
     "symfony/twig-bridge": {
@@ -298,6 +313,9 @@
     },
     "symfony/var-dumper": {
         "version": "v4.0.0-beta2"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.0"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",

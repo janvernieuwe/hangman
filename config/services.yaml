@@ -1,10 +1,10 @@
 parameters:
-    locale: 'en'
     app.allowed_locales_pattern: 'de|en|es|fr'
     app.dictionaries:
         - '%kernel.project_dir%/data/words.txt'
         - '%kernel.project_dir%/data/words.xml'
     app.mail_recipient: 'training@sensiolabs.com'
+    locale: 'en'
 
 services:
     # default configuration only applies for services in *this* file
