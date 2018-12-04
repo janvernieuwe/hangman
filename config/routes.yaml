@@ -1,0 +1,6 @@
+index:
+    path: /
+    controller: FrameworkBundle:Redirect:urlRedirect
+    defaults:
+        path: '/%locale%'
+        permanent: true

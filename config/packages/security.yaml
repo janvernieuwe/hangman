@@ -1,0 +1,33 @@
+security:
+    encoders:
+        App\Entity\Player: bcrypt
+
+    providers:
+        players:
+            entity:
+                class: App\Entity\Player
+                property: username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: "^/(%app.allowed_locales_pattern%)/game"
+            provider: players
+            anonymous: ~
+            form_login:
+                check_path: login
+                login_path: login
+                default_target_path: game_home
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path: logout
+                target: homepage
+            logout_on_user_change: true
+
+    access_control:
+        - { path: "^/(%app.allowed_locales_pattern%)/game/login", roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^/(%app.allowed_locales_pattern%)/game/register", roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^/(%app.allowed_locales_pattern%)/game", roles: ROLE_USER }

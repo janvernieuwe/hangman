@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} User list
+{% endblock %}
+
+{% block content %}
+    <h1>All users registered</h1>
+
+    {% if players %}
+    <ul>
+        {% for player in players %}
+        <ol>{{ loop.index }} - {{ player.fullname }} ({{ player.dateOfBirth|date('M j, Y') }})</ol>
+        {% endfor %}
+    </ul>
+    {% else %}
+        No player registered.
+    {% endif %}
+{% endblock %}

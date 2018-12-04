@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} Register
+{% endblock %}
+
+{% block content %}
+    <h2>{{ 'register.title'|trans }}</h2>
+
+    {{ form_start(registration_form) }}
+        {{ form_widget(registration_form) }}
+        <button type="submit" class="btn">{{ 'register.submit'|trans }}</button>
+    {{ form_end(registration_form) }}
+{% endblock %}
