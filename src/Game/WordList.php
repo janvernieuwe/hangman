@@ -5,7 +5,7 @@ namespace App\Game;
 use App\Game\Exception\RuntimeException;
 use App\Game\Loader\LoaderInterface;
 
-class WordList implements RandomWordGeneratorInterface
+class WordList implements WordGeneratorInterface
 {
     private $words = [];
     private $loaders = [];

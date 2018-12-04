@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Game;
 
-interface RandomWordGeneratorInterface
+interface WordGeneratorInterface
 {
     public function getRandomWord(): string;
 }

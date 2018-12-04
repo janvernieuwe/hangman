@@ -13,7 +13,7 @@ class Runner
     private $wordList;
     private $tokenStorage;
 
-    public function __construct(Storage $storage, RandomWordGeneratorInterface $wordList, TokenStorageInterface $tokenStorage)
+    public function __construct(Storage $storage, WordGeneratorInterface $wordList, TokenStorageInterface $tokenStorage)
     {
         $this->storage = $storage;
         $this->wordList = $wordList;
