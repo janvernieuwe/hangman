@@ -60,8 +60,7 @@ class Runner
 
     public function resetGame(): void
     {
-        $game = $this->storage->loadGame();
-
+        $this->storage->loadGame();
         $this->storage->reset();
     }
 

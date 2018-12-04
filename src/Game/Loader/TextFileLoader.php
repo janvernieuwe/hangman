@@ -17,3 +17,4 @@ class TextFileLoader implements LoaderInterface
         return 'txt';
     }
 }
+

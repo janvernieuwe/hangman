@@ -12,7 +12,7 @@ class XmlFileLoader implements LoaderInterface
         $words = [];
         $xml = new \SimpleXmlElement(file_get_contents($dictionary));
         foreach ($xml->word as $word) {
-            $words[] = (string) $word;
+            $words[] = trim($word);
         }
 
         return $words;
