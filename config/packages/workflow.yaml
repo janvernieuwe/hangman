@@ -1,0 +1,28 @@
+framework:
+    workflows:
+        door:
+            type: 'state_machine'
+            initial_place: 'open'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'state'
+            supports:
+                - App\Entity\Door
+            places:
+                - open
+                - closed
+                - locked
+            transitions:
+                open:
+                    from: closed
+                    to: open
+                close:
+                    from: open
+                    to: closed
+                lock:
+                    from: closed
+                    to: locked
+                unlock:
+                    from: locked
+                    to: closed
