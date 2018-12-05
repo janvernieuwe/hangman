@@ -31,7 +31,9 @@ services:
 
     App\Game\LoggedRunner:
         decorates: 'App\Game\Runner'
-        arguments: ['@App\Game\LoggedRunner.inner', '@monolog.logger.hangman']
+        arguments:
+            - '@App\Game\LoggedRunner.inner'
+            - '@monolog.logger.hangman'
 
 
 
