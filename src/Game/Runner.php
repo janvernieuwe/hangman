@@ -7,7 +7,7 @@ use App\Game\Exception\LogicException;
 use App\Game\Exception\RuntimeException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
-class Runner
+class Runner implements RunnerInterface
 {
     private $storage;
     private $wordList;
@@ -94,7 +94,7 @@ class Runner
         $this->resetGame();
     }
 
-    private function createGame(): Game
+    public function createGame(): Game
     {
         $word = $this->wordList->getRandomWord();
         $game = $this->storage->newGame($word);
@@ -103,7 +103,7 @@ class Runner
         return $game;
     }
 
-    private function getPlayer(): Player
+    public function getPlayer(): Player
     {
         $token = $this->tokenStorage->getToken();
 

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Game\Exception\LogicException;
 use App\Game\Runner;
+use App\Game\RunnerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +19,7 @@ class GameController extends AbstractController
     /**
      * @Route("/", name="game_home", methods="GET", defaults={"_locale": "en"})
      */
-    public function home(Runner $gameRunner): Response
+    public function home(RunnerInterface $gameRunner): Response
     {
         return $this->render('game/home.html.twig', [
             'game' => $gameRunner->loadGame()
@@ -28,7 +29,7 @@ class GameController extends AbstractController
     /**
      * @Route("/won", name="game_won", methods="GET")
      */
-    public function won(Runner $gameRunner): Response
+    public function won(RunnerInterface $gameRunner): Response
     {
         $game = $gameRunner->loadGame();
 
@@ -46,7 +47,7 @@ class GameController extends AbstractController
     /**
      * @Route("/failed", name="game_failed", methods="GET")
      */
-    public function failed(Runner $gameRunner): Response
+    public function failed(RunnerInterface $gameRunner): Response
     {
         $game = $gameRunner->loadGame();
 
@@ -64,7 +65,7 @@ class GameController extends AbstractController
     /**
      * @Route("/reset", name="game_reset", methods={"GET", "POST"})
      */
-    public function reset(Runner $gameRunner): RedirectResponse
+    public function reset(RunnerInterface $gameRunner): RedirectResponse
     {
         $gameRunner->resetGame();
 
@@ -78,7 +79,7 @@ class GameController extends AbstractController
      *   "letter"="[A-Z]"
      * })
      */
-    public function playLetter(Runner $gameRunner, string $letter): RedirectResponse
+    public function playLetter(RunnerInterface $gameRunner, string $letter): RedirectResponse
     {
         $game = $gameRunner->playLetter($letter);
 
@@ -94,7 +95,7 @@ class GameController extends AbstractController
      *
      * @Route("/play", name="game_play_word", condition="request.request.has('word')", methods={"POST"})
      */
-    public function playWord(Request $request, Runner $gameRunner): RedirectResponse
+    public function playWord(Request $request, RunnerInterface $gameRunner): RedirectResponse
     {
         $game = $gameRunner->playWord($request->request->get('word'));
 

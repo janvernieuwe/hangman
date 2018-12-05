@@ -26,3 +26,12 @@ services:
         calls:
             - { method: 'addLoader', arguments: ['@App\Game\Loader\TextFileLoader'] }
             - { method: 'addLoader', arguments: ['@App\Game\Loader\XmlFileLoader'] }
+
+    App\Game\RunnerInterface: '@App\Game\Runner'
+
+    App\Game\LoggedRunner:
+        decorates: 'App\Game\Runner'
+        arguments: ['@App\Game\LoggedRunner.inner', '@monolog.logger.hangman']
+
+
+
